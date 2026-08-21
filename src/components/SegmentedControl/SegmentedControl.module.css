@@ -1,0 +1,49 @@
+.group {
+  display: flex;
+  height: 42px;
+  padding: 3px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: rgba(241, 248, 245, 0.6);
+  gap: 3px;
+}
+
+.segment {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.segment:not(:disabled):hover {
+  background: rgba(22, 163, 74, 0.10);
+  color: var(--ink);
+}
+
+.segment.active {
+  background: var(--teal-600);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.30);
+}
+
+.segment.active:not(:disabled):hover {
+  background: var(--teal-600);
+  color: #fff;
+}
+
+.group.disabled .segment {
+  cursor: default;
+}
+
+.group.disabled .segment.active {
+  box-shadow: none;
+}

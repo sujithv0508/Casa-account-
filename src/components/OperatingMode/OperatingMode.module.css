@@ -1,0 +1,25 @@
+.calendarIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--teal-600);
+  margin-right: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.row > label,
+.row > div {
+  flex: 1 1 240px;
+  max-width: 300px;
+}
+
+@media (max-width: 640px) {
+  .row > label,
+  .row > div {
+    max-width: none;
+  }
+}

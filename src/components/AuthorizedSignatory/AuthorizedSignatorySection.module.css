@@ -1,0 +1,541 @@
+.addGroupButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 9px;
+  padding: 10px 18px;
+  background: var(--action-gradient);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: var(--action-glow);
+  transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.addGroupButton:not(:disabled):hover {
+  background: var(--action-gradient-hover);
+  box-shadow: var(--action-glow-hover);
+  transform: translateY(-1px);
+}
+
+.addGroupIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.disabledButton {
+  background: rgba(150, 170, 200, 0.25) !important;
+  color: var(--ink-soft) !important;
+  box-shadow: none !important;
+  cursor: not-allowed;
+}
+
+.disabledButton:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 40px 20px;
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.emptyIcon {
+  width: 30px;
+  height: 30px;
+  color: #ABB3BA;
+}
+
+.emptyTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.emptyDesc {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.groupCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+  transition: box-shadow 200ms ease, border-color 200ms ease, transform 200ms ease;
+  overflow: hidden;
+}
+
+.groupCard:hover {
+  border-color: rgba(22, 163, 74, 0.28);
+  box-shadow: 0 10px 24px rgba(15, 60, 35, 0.1);
+  transform: translateY(-1px);
+}
+
+.tone_blue {
+  background: linear-gradient(150deg, rgba(22, 163, 74, 0.1), rgba(255, 255, 255, 0.7));
+}
+
+.tone_lavender {
+  background: linear-gradient(150deg, rgba(124, 111, 232, 0.11), rgba(255, 255, 255, 0.7));
+}
+
+.tone_mint {
+  background: linear-gradient(150deg, rgba(22, 163, 106, 0.1), rgba(255, 255, 255, 0.7));
+}
+
+.tone_cyan {
+  background: linear-gradient(150deg, rgba(63, 197, 222, 0.11), rgba(255, 255, 255, 0.7));
+}
+
+.tone_peach {
+  background: linear-gradient(150deg, rgba(224, 138, 60, 0.11), rgba(255, 255, 255, 0.7));
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.groupIconWrap {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--blue-50);
+  color: var(--blue-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.groupIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.headerText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.groupTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-900);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.groupMeta {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.collapseIcon {
+  width: 14px;
+  height: 14px;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+  transition: transform 220ms ease;
+}
+
+.collapseIconOpen {
+  transform: rotate(90deg);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 14px 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.groupFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.field span {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.field input {
+  height: 30px;
+  padding: 0 9px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.field input:not(:disabled):focus {
+  outline: none;
+  border-color: var(--blue-600);
+  background: #fff;
+}
+
+.field input:disabled {
+  color: var(--ink-soft);
+  cursor: default;
+}
+
+.requiredInput {
+  color: var(--blue-600) !important;
+  font-weight: 700 !important;
+}
+
+.memberList {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.memberBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.memberBlock:not(:last-child) {
+  border-bottom: 1px solid var(--line);
+}
+
+.memberMain {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.memberPreview {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: rgba(241, 248, 245, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.memberPreviewIcon {
+  width: 22px;
+  height: 22px;
+  color: var(--blue-600);
+}
+
+.memberPreviewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memberInfoRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
+  align-items: end;
+}
+
+.memberField {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.miniLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.memberField input,
+.memberControlWrap input {
+  width: 100%;
+  height: 30px;
+  padding: 0 9px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.memberControlWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.memberControlWrap input {
+  padding-right: 28px;
+}
+
+.memberField input:not(:disabled):focus,
+.memberControlWrap input:not(:disabled):focus {
+  outline: none;
+  border-color: var(--blue-600);
+  background: #fff;
+}
+
+.memberField input:disabled,
+.memberControlWrap input:disabled {
+  color: var(--ink-soft);
+  cursor: default;
+}
+
+.memberSuffixIcon {
+  position: absolute;
+  right: 9px;
+  width: 12px;
+  height: 12px;
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+
+.memberDeleteButton {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 160ms ease;
+}
+
+.memberDeleteButton:not(:disabled):hover {
+  background: rgba(192, 57, 43, 0.1);
+}
+
+.memberDeleteButton:disabled {
+  color: rgba(192, 57, 43, 0.35);
+  cursor: not-allowed;
+}
+
+.memberDeleteIcon {
+  width: 13px;
+  height: 13px;
+}
+
+.memberActionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mandatoryLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--blue-600);
+  cursor: pointer;
+}
+
+.checkbox:disabled {
+  cursor: default;
+}
+
+.signatureButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 11.5px;
+  white-space: nowrap;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.signatureButton:not(:disabled):hover {
+  background: #fff;
+  border-color: rgba(22, 163, 74, 0.35);
+  color: var(--blue-600);
+}
+
+.signatureButton:disabled {
+  color: var(--ink-soft);
+  cursor: default;
+}
+
+.signatureIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.addHolderButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  align-self: flex-end;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 12px;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.addHolderButton:not(:disabled):hover {
+  background: #fff;
+  border-color: rgba(22, 163, 74, 0.35);
+  color: var(--blue-600);
+}
+
+.addHolderIcon {
+  width: 13px;
+  height: 13px;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-top: 1px solid var(--line);
+}
+
+.editGroupButton,
+.deleteGroupButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background: none;
+  padding: 5px 8px;
+  border-radius: 7px;
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 150ms ease;
+}
+
+.editGroupButton {
+  color: var(--blue-600);
+}
+
+.editGroupButton:hover {
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.deleteGroupButton {
+  color: var(--danger);
+}
+
+.deleteGroupButton:not(:disabled):hover {
+  background: rgba(192, 57, 43, 0.1);
+}
+
+.deleteGroupButton:disabled {
+  color: var(--ink-soft);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.footerIcon {
+  width: 12px;
+  height: 12px;
+}

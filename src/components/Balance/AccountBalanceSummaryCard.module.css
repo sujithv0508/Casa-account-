@@ -1,0 +1,127 @@
+.card {
+  height: 100%;
+  min-height: 280px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--blue-50);
+  border: 1px solid rgba(22, 163, 74, 0.18);
+  border-radius: 12px;
+  padding: 14px 16px;
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.heroIllustration {
+  flex-shrink: 0;
+}
+
+.heroNegative {
+  border-color: rgba(192, 57, 43, 0.22);
+  box-shadow: 0 8px 22px -12px rgba(192, 57, 43, 0.28);
+}
+
+.heroPositive {
+  border-color: rgba(22, 163, 74, 0.3);
+  box-shadow: 0 8px 22px -12px rgba(22, 163, 74, 0.22);
+}
+
+.heroLabel {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.heroValue {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--blue-600);
+  font-variant-numeric: tabular-nums;
+}
+
+.heroValueNegative {
+  color: var(--danger);
+}
+
+.heroAsOf {
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.rowLabel {
+  font-size: 12px;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.rowValue {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.rowValueNegative {
+  color: var(--danger);
+}
+
+.detailsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--blue-600);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.detailsLink:hover {
+  text-decoration: underline;
+}
+
+.detailsIcon {
+  width: 13px;
+  height: 13px;
+}

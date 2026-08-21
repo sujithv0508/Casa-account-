@@ -1,0 +1,692 @@
+.secondaryButton,
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 9px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.secondaryButton {
+  background: var(--card);
+  color: var(--ink-soft);
+  border-color: var(--border);
+}
+
+.secondaryButton:hover {
+  background: var(--bg);
+}
+
+.primaryButton {
+  background: var(--action-gradient);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: var(--action-glow);
+}
+
+.primaryButton:hover {
+  background: var(--action-gradient-hover);
+  box-shadow: var(--action-glow-hover);
+  transform: translateY(-1px);
+}
+
+.buttonIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.summaryBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--blue-50);
+  border: 1px solid rgba(22, 163, 74, 0.18);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+}
+
+.summaryBanner p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--navy-700);
+  line-height: 1.4;
+}
+
+.bannerIcon {
+  width: 18px;
+  height: 18px;
+  color: var(--blue-600);
+  flex-shrink: 0;
+}
+
+.summaryGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line);
+}
+
+.summaryLabel {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.summaryValue {
+  font-size: 12.5px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.historyRow {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 14px;
+  position: relative;
+}
+
+.historyRow:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 12px;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+
+.historyDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--blue-600);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.historyContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.historyTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.historyAction {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.historyTime {
+  font-size: 11px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.historyActivity {
+  margin: 3px 0 3px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.historyUser {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--blue-600);
+}
+
+.statusOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statusOptionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line);
+}
+
+.statusOptionLabel {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.statusOptionDesc {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.statusToggle {
+  position: relative;
+  width: 34px;
+  height: 19px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(214, 231, 223, 0.55));
+  box-shadow: inset 0 1px 2px rgba(150, 170, 200, 0.35);
+  flex-shrink: 0;
+  transition: background 180ms ease, box-shadow 180ms ease;
+}
+
+.statusKnob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 180ms ease;
+}
+
+.statusToggleOn {
+  background: linear-gradient(135deg, var(--danger) 0%, #E08A8A 100%);
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.14), 0 2px 8px rgba(192, 57, 43, 0.30);
+}
+
+.statusToggleOn .statusKnob {
+  transform: translateX(15px);
+}
+
+.confirmMessage {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.verifyWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 6px 4px 2px;
+}
+
+.verifyRing {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verifyTrack {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+}
+
+.verifySpinner {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--action-gradient);
+  border-right-color: var(--action-gradient);
+  transition: border-color 300ms ease;
+}
+
+.verifySpinnerDanger {
+  border-top-color: var(--danger);
+  border-right-color: var(--danger);
+}
+
+.verifyOrbit {
+  position: absolute;
+  inset: -6px;
+}
+
+.verifyOrbitDot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.16), 0 0 10px rgba(22, 163, 74, 0.55);
+  transition: background 300ms ease, box-shadow 300ms ease;
+}
+
+.verifyOrbitDotDanger {
+  background: var(--danger);
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.16), 0 0 10px rgba(192, 57, 43, 0.55);
+}
+
+.verifyScanClip {
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.verifyScanBeam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 42%;
+  background: linear-gradient(180deg, rgba(11, 122, 84, 0) 0%, rgba(11, 122, 84, 0.24) 50%, rgba(11, 122, 84, 0) 100%);
+}
+
+.verifyIconCircle {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 16px rgba(15, 60, 35, 0.12), 0 0 0 6px rgba(11, 122, 84, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verifyIcon {
+  width: 26px;
+  height: 26px;
+  color: var(--action-gradient);
+}
+
+.verifyIconDanger {
+  color: var(--danger);
+}
+
+.verifyTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+.verifySubtitle {
+  margin: 4px 0 20px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.verifySteps {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.verifyStepsLine {
+  position: absolute;
+  top: 4px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.verifyStep {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.verifyStepDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--border);
+  transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.verifyStepLabel {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  transition: color 200ms ease;
+}
+
+.verifyStepActive .verifyStepDot {
+  background: var(--action-gradient);
+  border-color: var(--action-gradient);
+  box-shadow: 0 0 0 4px rgba(11, 122, 84, 0.16);
+}
+
+.verifyStepActive .verifyStepLabel {
+  color: var(--action-gradient);
+}
+
+.verifyStepDone .verifyStepDot {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.verifyRingComplete .verifyTrack {
+  border-color: var(--success);
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.14);
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.verifyRingDanger .verifyTrack {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.14);
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.successWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8px 4px 2px;
+}
+
+.successIconCircle {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: var(--success-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 0 0 8px rgba(22, 163, 74, 0.08);
+}
+
+.successIconCircleDanger {
+  background: rgba(192, 57, 43, 0.12);
+  box-shadow: 0 0 0 8px rgba(192, 57, 43, 0.08);
+}
+
+.successIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--success);
+}
+
+.successIconDanger {
+  color: var(--danger);
+}
+
+.successInfoGrid {
+  width: 100%;
+  margin-top: 6px;
+  text-align: left;
+}
+
+.dangerButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 9px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1px solid var(--rose-200);
+  background: var(--rose-50);
+  color: var(--rose-700);
+  transition: background 160ms ease;
+}
+
+.dangerButton:hover {
+  background: var(--rose-100);
+}
+
+.dangerButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fieldGrid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+  margin-bottom: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fieldLabel {
+  margin: 0;
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.fieldValue {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tone_success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.tone_warning {
+  background: rgba(183, 121, 31, 0.14);
+  color: var(--warning);
+}
+
+.tone_danger {
+  background: rgba(192, 57, 43, 0.12);
+  color: var(--danger);
+}
+
+.sectionDivider {
+  margin: 4px 0 12px;
+  border: none;
+  border-top: 1px solid var(--line);
+}
+
+.changeSummaryTitle {
+  margin: 0 0 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.changeTableWrapper {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.changeTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.changeTable th {
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid var(--line);
+}
+
+.changeTable td {
+  padding: 9px 12px;
+  font-size: 12px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.changeTable tr:last-child td {
+  border-bottom: none;
+}
+
+.changeTable tr:hover td {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.previousValue {
+  color: var(--ink-soft);
+}
+
+.newValue {
+  font-weight: 700;
+  color: var(--blue-600);
+  background: var(--blue-50);
+  border-radius: 6px;
+  padding: 2px 7px;
+  display: inline-block;
+}
+
+.roleNotice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 14px;
+}
+
+.roleNotice p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.roleNoticeIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 90px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: rgba(248, 251, 255, 0.9);
+  color: var(--ink);
+  padding: 10px 12px;
+  font-size: 12.5px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.resultBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 20px 10px;
+}
+
+.resultIconSuccess,
+.resultIconDanger {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultIconSuccess {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.resultIconDanger {
+  background: rgba(192, 57, 43, 0.12);
+  color: var(--danger);
+}
+
+.resultIconSuccess svg,
+.resultIconDanger svg {
+  width: 20px;
+  height: 20px;
+}
+
+.resultTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.resultMessage {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  max-width: 340px;
+}

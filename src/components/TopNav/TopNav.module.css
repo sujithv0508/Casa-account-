@@ -1,0 +1,202 @@
+.nav {
+  height: 52px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: var(--glass-strong);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--glass-shadow);
+  color: var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.iconButton {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.iconButton:hover,
+.iconButton:focus-visible {
+  background: var(--blue-50);
+  border-color: rgba(22, 163, 74, 0.28);
+  color: var(--blue-600);
+  outline: none;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 14px;
+  border-right: 1px solid var(--line);
+}
+
+.brandIcon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brandIconGlyph {
+  width: 15px;
+  height: 15px;
+  color: #fff;
+}
+
+.brandName {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.crumbGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.crumb {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.crumbActive {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.crumbSep {
+  width: 12px;
+  height: 12px;
+  color: #ABB3BA;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  border-radius: 999px;
+  background: #E5484D;
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #fff;
+}
+
+.divider {
+  width: 1px;
+  height: 22px;
+  background: var(--line);
+  margin: 0 4px;
+}
+
+.userChip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px 4px 4px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+  transition: background 180ms ease;
+}
+
+.userChip:hover,
+.userChip:focus-visible {
+  background: var(--blue-50);
+  outline: none;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--primary-gradient);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.userName {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.chevron {
+  width: 13px;
+  height: 13px;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .breadcrumb {
+    display: none;
+  }
+
+  .userName {
+    display: none;
+  }
+}

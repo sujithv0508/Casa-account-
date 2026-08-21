@@ -1,0 +1,291 @@
+.addHolderButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  background: var(--action-gradient);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13.5px;
+  box-shadow: var(--action-glow);
+  transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.addHolderButton:not(:disabled):hover {
+  background: var(--action-gradient-hover);
+  box-shadow: var(--action-glow-hover);
+  transform: translateY(-1px);
+}
+
+.addHolderButton:not(:disabled):active {
+  transform: translateY(0);
+  box-shadow: var(--action-glow);
+}
+
+.addHolderIcon {
+  width: 15px;
+  height: 15px;
+}
+
+.disabledButton {
+  background: rgba(150, 170, 200, 0.25);
+  color: var(--ink-soft);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.disabledButton:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(22, 163, 74, 0.08);
+  border: 1px solid rgba(22, 163, 74, 0.18);
+  color: var(--blue-600-dark);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.noticeIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  padding: 48px 24px;
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+}
+
+.emptyIconWrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: var(--blue-50);
+  color: var(--blue-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.emptyIcon {
+  width: 22px;
+  height: 22px;
+}
+
+.emptyTitle {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.emptyDesc {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.holderTable {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.holderHeaderRow,
+.holderRow {
+  display: grid;
+  grid-template-columns: 1.3fr 1.3fr 1fr 1.1fr;
+  align-items: center;
+  gap: 14px;
+}
+
+.holderHeaderRow {
+  padding: 12px 16px;
+  background: rgba(241, 248, 245, 0.6);
+}
+
+.holderHeaderRow span {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.holderRow {
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+  transition: background 160ms ease;
+}
+
+.rowPendingDelete {
+  background: rgba(192, 57, 43, 0.05);
+}
+
+.cell {
+  min-width: 0;
+}
+
+.staticValue {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.rowPendingDelete .staticValue {
+  color: var(--ink-soft);
+  text-decoration: line-through;
+}
+
+.relationshipInput {
+  width: 100%;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.relationshipInput:focus {
+  outline: none;
+  border-color: var(--blue-600);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.relationshipInput::placeholder {
+  color: var(--ink-soft);
+  font-weight: 500;
+  text-transform: none;
+}
+
+.actionsCell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.statusBadge {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.tone_add {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.tone_remove {
+  background: rgba(192, 57, 43, 0.12);
+  color: var(--danger);
+}
+
+.deleteButton,
+.undoButton {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 160ms ease;
+  flex-shrink: 0;
+}
+
+.deleteButton {
+  background: var(--rose-50);
+  color: var(--rose-700);
+}
+
+.deleteButton:not(:disabled):hover {
+  background: var(--rose-100);
+}
+
+.deleteButton:disabled {
+  color: rgba(190, 18, 60, 0.35);
+  background: rgba(255, 241, 242, 0.6);
+  cursor: not-allowed;
+}
+
+.undoButton {
+  background: var(--blue-50);
+  color: var(--blue-600);
+}
+
+.undoButton:not(:disabled):hover {
+  background: rgba(22, 163, 74, 0.18);
+}
+
+.undoButton:disabled {
+  color: rgba(22, 163, 74, 0.35);
+  cursor: not-allowed;
+}
+
+.actionIcon {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 900px) {
+  .holderHeaderRow {
+    display: none;
+  }
+
+  .holderRow {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .cell::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+
+  .actionsCell {
+    justify-content: flex-start;
+  }
+}

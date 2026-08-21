@@ -1,0 +1,57 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.required {
+  color: var(--danger);
+}
+
+.field input,
+.field select {
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: rgba(241, 248, 245, 0.6);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.field input:not(:disabled):focus,
+.field select:not(:disabled):focus {
+  outline: none;
+  border-color: var(--blue-600);
+  background: #fff;
+}
+
+.field input:disabled,
+.field select:disabled {
+  color: var(--ink-soft);
+  cursor: default;
+}
+
+.helper {
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 920px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

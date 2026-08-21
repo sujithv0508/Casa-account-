@@ -1,0 +1,195 @@
+.page {
+  min-height: 100vh;
+  background: var(--ambient-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  width: 100%;
+  max-width: none;
+  padding: 16px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.generalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.evenGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.tabPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tabPanelWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(241, 243, 242, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 20px 34px rgba(22, 163, 74, 0.08);
+  transition: height 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tabPanelStatic,
+.tabPanelSlide {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 340ms cubic-bezier(0.22, 1, 0.36, 1), opacity 340ms cubic-bezier(0.22, 1, 0.36, 1), filter 340ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tabPanelStatic {
+  position: relative;
+  opacity: 1;
+}
+
+.tabPanelSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+.tabPanelSlideEnterFromRight {
+  transform: translateX(20px) scale(0.985);
+  opacity: 0;
+  animation: panelEnterFromRight 340ms forwards ease;
+}
+
+.tabPanelSlideEnterFromLeft {
+  transform: translateX(-20px) scale(0.985);
+  opacity: 0;
+  animation: panelEnterFromLeft 340ms forwards ease;
+}
+
+.tabPanelExitToLeft {
+  transform: translateX(0) scale(1);
+  animation: panelExitToLeft 340ms forwards ease;
+}
+
+.tabPanelExitToRight {
+  transform: translateX(0) scale(1);
+  animation: panelExitToRight 340ms forwards ease;
+}
+
+@keyframes panelEnterFromRight {
+  from {
+    transform: translateX(20px) scale(0.985);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes panelEnterFromLeft {
+  from {
+    transform: translateX(-20px) scale(0.985);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes panelExitToLeft {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-20px) scale(0.985);
+    opacity: 0;
+  }
+}
+
+@keyframes panelExitToRight {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(20px) scale(0.985);
+    opacity: 0;
+  }
+}
+
+.toast {
+  position: fixed;
+  bottom: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy-900);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(15, 60, 35, 0.28);
+  z-index: 90;
+  animation: toastIn 200ms ease;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.notFoundCard {
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  box-shadow: var(--glass-shadow);
+  padding: 32px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.backButton {
+  border: none;
+  background: var(--action-gradient);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 18px;
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: background 160ms ease;
+}
+
+.backButton:hover {
+  background: var(--action-gradient-hover);
+}
+
+@media (max-width: 900px) {
+  .generalGrid,
+  .evenGrid {
+    grid-template-columns: 1fr;
+  }
+}

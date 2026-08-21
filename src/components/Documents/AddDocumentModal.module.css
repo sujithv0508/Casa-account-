@@ -1,0 +1,234 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.fieldWide {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.required {
+  color: var(--danger);
+  margin-left: 2px;
+}
+
+.control {
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.control:focus {
+  outline: none;
+  border-color: var(--blue-600);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.10);
+}
+
+.control.invalid {
+  border-color: rgba(192, 57, 43, 0.55);
+}
+
+select.control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7A90' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+  cursor: pointer;
+}
+
+.lookupTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.lookupTrigger:hover {
+  background: #fff;
+  border-color: rgba(22, 163, 74, 0.35);
+}
+
+.lookupTrigger:focus-visible {
+  outline: none;
+  border-color: var(--teal-500);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.16);
+}
+
+.lookupPlaceholder {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.lookupChevron {
+  width: 13px;
+  height: 13px;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 70px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 500;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--blue-600);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.10);
+}
+
+.charCount {
+  align-self: flex-end;
+  font-size: 10px;
+  color: var(--ink-soft);
+}
+
+.errorText {
+  font-size: 10.5px;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.verifiedRow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.toggle {
+  position: relative;
+  width: 34px;
+  height: 19px;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 231, 223, 0.9);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(214, 231, 223, 0.55));
+  box-shadow: inset 0 1px 2px rgba(148, 163, 184, 0.35);
+  flex-shrink: 0;
+  transition: background 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 260ms ease;
+}
+
+.toggle.on {
+  background: var(--action-gradient);
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.16), 0 2px 8px rgba(22, 163, 74, 0.30);
+}
+
+.toggle.on .knob {
+  transform: translateX(15px);
+}
+
+.verifiedCaption {
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.uploadArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 18px 12px;
+  border-radius: 10px;
+  border: 1.5px dashed rgba(22, 163, 74, 0.3);
+  background: rgba(241, 248, 245, 0.4);
+  text-align: center;
+}
+
+.uploadIcon {
+  width: 22px;
+  height: 22px;
+  color: var(--blue-600);
+}
+
+.uploadLabel {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--blue-600);
+}
+
+.uploadHint {
+  margin: 0;
+  font-size: 10.5px;
+  color: var(--ink-soft);
+}
+
+.fileName {
+  font-size: 11px;
+  color: var(--ink);
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.verifyDots {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+}
+
+.verifyDots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue-600);
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

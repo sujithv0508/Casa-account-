@@ -1,0 +1,156 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mainRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.legendRow {
+  display: grid;
+  grid-template-columns: 8px auto 1fr auto auto;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  width: 100%;
+  padding: 5px 6px;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 140ms ease;
+}
+
+.legendRow:not(:disabled):hover {
+  background: rgba(11, 122, 84, 0.06);
+}
+
+.legendRowActive {
+  background: #DDF4EA;
+}
+
+.legendRowActive:hover {
+  background: #DDF4EA;
+}
+
+.legendRowMuted {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legendCode {
+  font-size: 11px;
+  font-weight: 700;
+  color: #17201D;
+  white-space: nowrap;
+}
+
+.legendName {
+  font-size: 10.5px;
+  color: #71807A;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.legendValue {
+  font-size: 11px;
+  font-weight: 700;
+  color: #17201D;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.legendPct {
+  font-size: 10px;
+  font-weight: 600;
+  color: #16A36F;
+  min-width: 28px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.emptyWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px 4px;
+  text-align: center;
+}
+
+.emptyTitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #17201D;
+}
+
+.emptyDesc {
+  margin: 0;
+  font-size: 11.5px;
+  color: #71807A;
+  max-width: 260px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #E4E9E6;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #71807A;
+}
+
+@media (max-width: 480px) {
+  .legendRow {
+    grid-template-columns: 8px 1fr auto;
+    grid-template-areas:
+      "dot code value"
+      "dot name pct";
+    row-gap: 2px;
+  }
+
+  .legendDot {
+    grid-area: dot;
+  }
+
+  .legendCode {
+    grid-area: code;
+  }
+
+  .legendName {
+    grid-area: name;
+  }
+
+  .legendValue {
+    grid-area: value;
+  }
+
+  .legendPct {
+    grid-area: pct;
+  }
+}

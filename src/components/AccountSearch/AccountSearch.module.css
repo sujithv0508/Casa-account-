@@ -1,0 +1,108 @@
+.searchCard {
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  box-shadow: var(--glass-shadow);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.filterRow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.field input,
+.field select {
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--blue-600);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.10);
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.searchButton,
+.resetButton {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 9px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.resetButton {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+}
+
+.resetButton:hover {
+  background: #fff;
+}
+
+.searchButton {
+  background: var(--action-gradient);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: var(--action-glow);
+}
+
+.searchButton:hover {
+  background: var(--action-gradient-hover);
+  box-shadow: var(--action-glow-hover);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1020px) {
+  .filterRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .filterRow {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

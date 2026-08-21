@@ -1,0 +1,147 @@
+.tabCard {
+  background: #F6FCF8;
+  border: 1px solid #DCEEE3;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(15, 60, 35, 0.04);
+  padding: 8px;
+}
+
+.tabList {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 6px 9px;
+}
+
+.tabList::-webkit-scrollbar {
+  display: none;
+}
+
+.tabIndicator {
+  position: absolute;
+  top: 6px;
+  bottom: 9px;
+  border-radius: 12px;
+  background: #DCFCE7;
+  box-shadow: inset 0 0 0 1px rgba(22, 163, 74, 0.18);
+  transition: left 350ms cubic-bezier(0.22, 1, 0.36, 1), width 350ms cubic-bezier(0.22, 1, 0.36, 1), opacity 260ms ease;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tabUnderline {
+  position: absolute;
+  bottom: 2px;
+  height: 3px;
+  border-radius: 999px;
+  background: #16A34A;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.35);
+  transition: left 350ms cubic-bezier(0.22, 1, 0.36, 1), width 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tabButton {
+  position: relative;
+  z-index: 2;
+  border: none;
+  background: transparent;
+  padding: 11px 16px;
+  color: var(--ink);
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 13.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: max-content;
+  transition: transform 120ms ease, color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  flex: 1;
+  justify-content: center;
+}
+
+.tabButton:hover {
+  background: #F8F9F9;
+  color: var(--ink);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 60, 35, 0.05);
+}
+
+.tabButton:active {
+  transform: scale(0.97);
+}
+
+.tabNumber {
+  font-size: 11px;
+  font-weight: 700;
+  color: #737B79;
+  padding: 1px 6px;
+  border-radius: 5px;
+  background: rgba(115, 123, 121, 0.12);
+}
+
+.active {
+  background: transparent;
+  color: var(--teal-700);
+  font-weight: 700;
+}
+
+.active .tabNumber {
+  color: #15803D;
+  background: rgba(22, 163, 74, 0.16);
+}
+
+.active:hover {
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+.disabledTab {
+  opacity: 0.55;
+  color: rgba(15, 23, 42, 0.42);
+  background: rgba(148, 163, 184, 0.10);
+  cursor: not-allowed;
+}
+
+.disabledTab .tabNumber {
+  color: rgba(15, 23, 42, 0.38);
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.disabledTab:hover {
+  background: rgba(148, 163, 184, 0.10);
+  color: rgba(15, 23, 42, 0.42);
+  box-shadow: none;
+  transform: none;
+}
+
+.lockIcon {
+  width: 11px;
+  height: 11px;
+  opacity: 0.75;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .tabButton {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabButton,
+  .tabIndicator,
+  .tabUnderline {
+    transition: none;
+  }
+
+  .tabButton:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

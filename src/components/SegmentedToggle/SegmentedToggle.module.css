@@ -1,0 +1,64 @@
+.segmented {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(52px, 1fr));
+  width: 132px;
+  height: 30px;
+  padding: 3px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 3px rgba(22, 163, 74, 0.1);
+  flex-shrink: 0;
+}
+
+.indicator {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  height: calc(100% - 6px);
+  border-radius: 7px;
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.85), rgba(22, 163, 74, 0.75));
+  box-shadow: 0 2px 10px rgba(22, 163, 74, 0.32), inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.indicatorYes {
+  transform: translateX(0%);
+}
+
+.indicatorNo {
+  transform: translateX(100%);
+}
+
+.segment {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  transition: color 200ms ease;
+}
+
+.segment.active {
+  color: var(--navy-900);
+  font-weight: 800;
+}
+
+.segmented.disabled {
+  opacity: 0.55;
+}
+
+.segmented.disabled .segment {
+  cursor: not-allowed;
+}

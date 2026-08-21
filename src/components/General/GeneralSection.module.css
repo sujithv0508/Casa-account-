@@ -1,0 +1,43 @@
+.sectionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sectionHeader h2 {
+  font-size: 1.4rem;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 920px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

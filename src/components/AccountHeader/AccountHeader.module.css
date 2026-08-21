@@ -1,0 +1,97 @@
+.headerCard {
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: var(--glass-shadow);
+  padding: 12px 16px;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.titleRow h1 {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--navy-900);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.actionButton,
+.copyButton,
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--ink-soft);
+  background: var(--card);
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.actionButton:hover {
+  background: var(--bg);
+}
+
+.copyButton {
+  border-color: transparent;
+  background: var(--action-gradient);
+  color: #fff;
+  box-shadow: var(--action-glow);
+}
+
+.copyButton:hover {
+  background: var(--action-gradient-hover);
+  box-shadow: var(--action-glow-hover);
+}
+
+.primaryButton {
+  border: 1px solid var(--violet-200);
+  background: var(--violet-50);
+  color: var(--violet-700);
+  box-shadow: none;
+}
+
+.primaryButton:hover {
+  background: var(--violet-100);
+  box-shadow: none;
+}
+
+.actionIcon {
+  width: 12.5px;
+  height: 12.5px;
+}
+
+@media (max-width: 720px) {
+  .titleRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+
+  .actionButton,
+  .copyButton,
+  .primaryButton {
+    justify-content: center;
+    width: 100%;
+  }
+}

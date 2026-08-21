@@ -1,0 +1,118 @@
+.bar {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 24px;
+  background: var(--glass-strong);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--glass-border);
+  box-shadow: 0 -8px 24px rgba(15, 60, 35, 0.08);
+  z-index: 30;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  min-width: 0;
+}
+
+.meta strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.metaIcon {
+  width: 13px;
+  height: 13px;
+  color: var(--blue-600);
+  flex-shrink: 0;
+}
+
+.metaDivider {
+  color: var(--line);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cancelButton,
+.saveButton,
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  white-space: nowrap;
+}
+
+.cancelButton {
+  background: transparent;
+  color: var(--ink-soft);
+}
+
+.cancelButton:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--ink);
+}
+
+.saveButton {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--ink);
+}
+
+.saveButton:hover {
+  background: #fff;
+  border-color: rgba(22, 163, 74, 0.3);
+}
+
+.submitButton {
+  background: var(--action-gradient);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: var(--action-glow);
+}
+
+.submitButton:hover {
+  background: var(--action-gradient-hover);
+  box-shadow: var(--action-glow-hover);
+  transform: translateY(-1px);
+}
+
+.submitIcon {
+  width: 13px;
+  height: 13px;
+}
+
+@media (max-width: 720px) {
+  .bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+
+  .actions button {
+    flex: 1;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,63 @@
+.sectionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sectionHeader h2 {
+  font-size: 1.4rem;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.statusBadge {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.14);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.statusLabel {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.statusHint {
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (max-width: 920px) {
+  .statusGrid {
+    grid-template-columns: 1fr;
+  }
+}

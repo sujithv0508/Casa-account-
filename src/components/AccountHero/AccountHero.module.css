@@ -1,0 +1,439 @@
+.hero {
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+  padding: 10px 16px;
+}
+
+.editBanner,
+.pendingBanner {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 9px;
+}
+
+.editBanner {
+  background: #EAF3FF;
+  border: 1px solid #BFD7F5;
+}
+
+.pendingBanner {
+  background: rgba(217, 154, 0, 0.1);
+  border: 1px solid rgba(217, 154, 0, 0.3);
+}
+
+.editBannerIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--blue-600);
+  flex-shrink: 0;
+}
+
+.pendingBannerIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--warning);
+  flex-shrink: 0;
+}
+
+.editBannerText {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.editBannerTitle {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--blue-600);
+}
+
+.pendingBannerTitle {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--warning);
+}
+
+.editBannerSubtitle,
+.pendingBannerSubtitle {
+  margin: 0;
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.changeBadge {
+  flex-shrink: 0;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  color: var(--blue-600);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.changeBadgeAmber {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(217, 154, 0, 0.35);
+  color: var(--warning);
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.identity {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.accountIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--primary-gradient);
+  box-shadow: var(--primary-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.accountIconGlyph {
+  width: 22px;
+  height: 22px;
+  color: #fff;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: 1px 0 6px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.pillRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pillIcon {
+  width: 11px;
+  height: 11px;
+  color: var(--blue-600);
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--success-bg);
+  color: var(--success);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.status_success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.status_warning {
+  background: rgba(183, 121, 31, 0.14);
+  color: var(--warning);
+}
+
+.status_danger {
+  background: rgba(192, 57, 43, 0.12);
+  color: var(--danger);
+}
+
+.progressBlock {
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  padding: 0 20px;
+  min-width: 0;
+}
+
+.progressHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.progressLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.progressValue {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--blue-600);
+}
+
+.progressTrack {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(150, 170, 200, 0.25);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--blue-600) 0%, #5FA8FF 100%);
+  transition: width 200ms ease;
+}
+
+.stepsRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.stepIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.stepDone {
+  color: var(--success);
+}
+
+.stepActive {
+  color: var(--blue-600);
+}
+
+.stepPending {
+  color: #B7C3D9;
+}
+
+.stepLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.stepLabelMuted {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.actionsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.actionRow {
+  display: flex;
+  gap: 8px;
+}
+
+.ghostButton,
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 13px;
+  border-radius: 9px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  white-space: nowrap;
+}
+
+.ghostButton {
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ink);
+}
+
+.ghostButton:hover {
+  background: #FFFFFF;
+  border-color: rgba(22, 163, 74, 0.35);
+}
+
+.ghostButton:active {
+  transform: translateY(1px);
+}
+
+.primaryButton {
+  flex: 1;
+  justify-content: center;
+  background: var(--action-gradient);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: var(--action-glow);
+}
+
+.primaryButton:hover {
+  box-shadow: var(--action-glow-hover);
+  transform: translateY(-1px);
+}
+
+.primaryButton:active {
+  transform: translateY(0);
+}
+
+.buttonIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.quickActions {
+  border-top: 1px solid var(--line);
+  padding-top: 6px;
+}
+
+.quickActionsLabel {
+  margin: 0 0 5px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.quickActionsRow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.quickAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 4px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.2;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.quickAction:hover {
+  background: #FFFFFF;
+  border-color: rgba(22, 163, 74, 0.3);
+}
+
+.quickIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quickIconGlyph {
+  width: 11px;
+  height: 11px;
+}
+
+.quickIconBlue {
+  background: var(--blue-50);
+  color: var(--blue-600);
+}
+
+.quickIconPurple {
+  background: rgba(124, 111, 232, 0.14);
+  color: var(--purple-tint);
+}
+
+.quickIconGreen {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.quickIconGray {
+  background: rgba(107, 122, 144, 0.12);
+  color: var(--ink-soft);
+}
+
+@media (max-width: 1100px) {
+  .topRow {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .progressBlock {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 12px 0;
+  }
+}

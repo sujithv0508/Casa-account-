@@ -1,0 +1,342 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 420px;
+  max-height: 62vh;
+}
+
+.filterRow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  gap: 12px;
+  align-items: end;
+  flex-shrink: 0;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field input {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px 0 34px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.field input::placeholder {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--blue-600);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.fieldIcon {
+  position: absolute;
+  left: 11px;
+  width: 14px;
+  height: 14px;
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+
+.searchButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 9px;
+  background: var(--action-gradient);
+  color: #fff;
+  font-weight: 600;
+  font-size: 12.5px;
+  white-space: nowrap;
+  box-shadow: var(--action-glow);
+  transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.searchButton:hover {
+  background: var(--action-gradient-hover);
+  box-shadow: var(--action-glow-hover);
+  transform: translateY(-1px);
+}
+
+.searchButtonIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.selectionError {
+  margin: 0;
+  padding: 9px 12px;
+  border-radius: 9px;
+  background: rgba(192, 57, 43, 0.08);
+  border: 1px solid rgba(192, 57, 43, 0.25);
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.resultsMeta {
+  flex-shrink: 0;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.resultsArea {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  overflow: hidden;
+}
+
+.tableWrap {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: rgba(241, 248, 245, 0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.table td {
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.highlight {
+  background: rgba(22, 163, 74, 0.18);
+  color: var(--blue-600-dark);
+  border-radius: 3px;
+  padding: 0 1px;
+  font-weight: 700;
+}
+
+.clearCacheButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--ink-soft);
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.clearCacheButton:hover {
+  background: #fff;
+  color: var(--blue-600);
+}
+
+.clearCacheIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.row {
+  cursor: pointer;
+  transition: background 140ms ease, box-shadow 140ms ease;
+}
+
+.row:hover {
+  background: rgba(110, 168, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(22, 163, 74, 0.18);
+}
+
+.row:last-child td {
+  border-bottom: none;
+}
+
+.rowDisabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.rowDisabled:hover {
+  background: rgba(192, 57, 43, 0.05);
+  box-shadow: none;
+}
+
+.rowBadge {
+  margin-left: 8px;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(192, 57, 43, 0.12);
+  color: var(--danger);
+  white-space: nowrap;
+}
+
+.stateMessage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  padding: 40px 24px;
+}
+
+.stateMessage p {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.emptyTitle {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--ink) !important;
+}
+
+.errorTitle {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--danger) !important;
+}
+
+.retryButton {
+  margin-top: 4px;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 160ms ease;
+}
+
+.retryButton:hover {
+  background: #fff;
+}
+
+.spinner {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 3px solid rgba(22, 163, 74, 0.18);
+  border-top-color: var(--blue-600);
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pagination {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pageSummary {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.pageControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.pageControls button {
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 160ms ease;
+}
+
+.pageControls button:not(:disabled):hover {
+  background: #fff;
+}
+
+.pageControls button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .filterRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .searchButton {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .filterRow {
+    grid-template-columns: 1fr;
+  }
+}

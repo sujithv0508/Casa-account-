@@ -1,0 +1,182 @@
+:root {
+  --bg: #F1F3F2;
+  --card: #F6FCF8;
+  --primary: #16A34A;
+  --text: #1F2B24;
+  --muted: #6B7A72;
+  --border: #DCEEE3;
+  --input-bg: #FFFFFF;
+  --shadow: 0 18px 40px rgba(15, 60, 35, 0.08);
+  --radius: 18px;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  /* CAIXA-style vivid emerald enterprise banking theme */
+  --navy-900: #1F2B24;
+  --navy-700: #33453B;
+  --blue-600: #0B7A54;
+  --blue-600-dark: #05513F;
+  --blue-50: #DCFCE7;
+  --app-bg: #F1F3F2;
+  --glass: #F6FCF8;
+  --glass-strong: #F6FCF8;
+  --glass-border: #DCEEE3;
+  --ink: #1F2B24;
+  --ink-soft: #6B7A72;
+  --ink-muted: #8FA098;
+  --success: #16A34A;
+  --success-bg: #DCFCE7;
+  --warning: #B7791F;
+  --danger: #C0392B;
+  --line: rgba(15, 60, 35, 0.12);
+  --glass-shadow: 0 2px 10px rgba(15, 60, 35, 0.06);
+  --glass-blur: none;
+  --purple-tint: #7C6FE8;
+  --orange-tint: #E08A3C;
+  --cyan-tint: #3FC5DE;
+  --pink-tint: #D97FC0;
+
+  /* Emerald accents — matches the primary button color for full consistency (kept as the same variable names as before to avoid touching every component) */
+  --teal-600: #0B7A54;
+  --teal-700: #05513F;
+  --teal-100: #DCFCE7;
+  --teal-500: #0B7A54;
+  --teal-25: #F0FDF4;
+  --teal-card-bg: #F6FCF8;
+  --teal-card-border: #DCEEE3;
+  --teal-card-shadow: 0 2px 10px rgba(15, 60, 35, 0.06);
+  --teal-card-border-focus: rgba(11, 122, 84, 0.4);
+  --teal-card-shadow-focus: 0 4px 14px rgba(15, 60, 35, 0.12);
+
+  /* Decorative brand surfaces only (logo, avatar, icon badges) — flat, no strong gradient */
+  --primary-gradient: #16A34A;
+  --primary-glow: 0 4px 10px rgba(22, 163, 74, 0.22);
+  --primary-glow-hover: 0 6px 14px rgba(22, 163, 74, 0.28);
+
+  /* Primary button theme: vivid emerald, flat (no strong gradient). */
+  --green-600: #16A34A;
+  --green-700: #15803D;
+  --green-100: #DCFCE7;
+  --green-50: #F0FDF4;
+  --action-gradient: #0B7A54;
+  --action-gradient-hover: #05513F;
+  --action-glow: 0 4px 10px rgba(11, 122, 84, 0.20);
+  --action-glow-hover: 0 6px 14px rgba(11, 122, 84, 0.26);
+
+  /* Destructive button palette (rose) */
+  --rose-50: #FFF1F2;
+  --rose-100: #FFE4E6;
+  --rose-200: #FECDD3;
+  --rose-700: #BE123C;
+
+  /* Header "Authorization" action (violet, distinct from the primary emerald) */
+  --violet-50: #F5F3FF;
+  --violet-100: #EDE9FE;
+  --violet-200: #DDD6FE;
+  --violet-700: #6D28D9;
+
+  /* Ambient page background: light grey */
+  --ambient-bg: linear-gradient(135deg, #F3F4F3 0%, #EDEEED 100%);
+
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--input-bg);
+  color: var(--text);
+  padding: 12px 14px;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(22, 163, 74, 0.30);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 10px;
+}
+
+th {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 15px;
+  }
+}
