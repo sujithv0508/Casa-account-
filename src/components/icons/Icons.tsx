@@ -348,6 +348,12 @@ export const FileTextIcon = ({ className }: IconProps) => (
   </svg>
 )
 
+export const FolderIcon = ({ className }: IconProps) => (
+  <svg className={className} {...base}>
+    <path d="M3 7a1.5 1.5 0 0 1 1.5-1.5h4l2 2h8A1.5 1.5 0 0 1 20 9v8a1.5 1.5 0 0 1-1.5 1.5h-14A1.5 1.5 0 0 1 3 17Z" />
+  </svg>
+)
+
 export const TrashIcon = ({ className }: IconProps) => (
   <svg className={className} {...base}>
     <path d="M4 7h16" />

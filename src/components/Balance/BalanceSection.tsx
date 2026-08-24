@@ -37,7 +37,6 @@ const BalanceSection = ({ data, onRefresh }: BalanceSectionProps) => {
         </button>
       }
     >
-      <p className={styles.groupLabel}>Account Amounts</p>
       <div className={styles.grid}>
         <div className={styles.tile}>
           <p className={styles.label}>Limit Amount</p>
@@ -53,10 +52,6 @@ const BalanceSection = ({ data, onRefresh }: BalanceSectionProps) => {
             {formatAmount(data.uncollectedAmount)}
           </p>
         </div>
-      </div>
-
-      <p className={styles.groupLabel}>Computed Balances</p>
-      <div className={styles.grid}>
         <div className={styles.tile}>
           <p className={styles.label}>Accounting Balance</p>
           <p className={`${styles.value} ${data.accountingBalance < 0 ? styles.valueNegative : ''}`}>
@@ -69,7 +64,7 @@ const BalanceSection = ({ data, onRefresh }: BalanceSectionProps) => {
             {formatAmount(data.availableBalance)}
           </p>
         </div>
-        <div className={styles.tile}>
+        <div className={`${styles.tile} ${data.authorizedBalance < 0 ? styles.tileDanger : ''}`}>
           <p className={styles.label}>Authorized Balance</p>
           <p className={`${styles.value} ${data.authorizedBalance < 0 ? styles.valueNegative : ''}`}>
             {formatAmount(data.authorizedBalance)}

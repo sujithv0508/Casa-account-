@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ConfirmDialog from '../AccountModals/ConfirmDialog'
 import CustomerSearchField, { type CustomerOption } from './CustomerSearchField'
-import { LockIcon, PlusIcon, RefreshIcon, TrashIcon, UserIcon } from '../icons/Icons'
+import { CheckCircleIcon, LockIcon, PlusIcon, RefreshIcon, TrashIcon, UserIcon } from '../icons/Icons'
 import SectionCard from '../SectionCard/SectionCard'
 import styles from './JointAccountSection.module.css'
 
@@ -154,6 +154,12 @@ const JointAccountSection = ({
                 <span className={styles.cell} data-label="Actions">
                   <span className={styles.actionsCell}>
                     {meta && <span className={`${styles.statusBadge} ${styles[`tone_${meta.tone}`]}`}>{meta.label}</span>}
+                    {holder.status === 'authorized' && (
+                      <span className={styles.authorizedBadge}>
+                        <CheckCircleIcon className={styles.authorizedIcon} />
+                        Authorized
+                      </span>
+                    )}
                     {holder.status === 'pendingDelete' ? (
                       <button
                         type="button"

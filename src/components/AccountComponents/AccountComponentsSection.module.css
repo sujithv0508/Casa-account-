@@ -324,10 +324,6 @@
 
 .valueBox {
   min-width: 0;
-  padding: 1px 6px;
-  border-radius: 6px;
-  border: 1px solid var(--line);
-  background: rgba(241, 248, 245, 0.55);
   color: var(--ink);
   font-size: 10.5px;
   line-height: 1.15;
@@ -335,12 +331,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  transition: border-color 220ms ease, background 220ms ease;
-}
-
-.cardItem:hover .valueBox {
-  border-color: color-mix(in srgb, var(--card-accent) 22%, var(--line));
-  background: color-mix(in srgb, var(--card-accent) 9%, white);
 }
 
 .cardFinalRow {

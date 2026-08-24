@@ -36,6 +36,7 @@ import InterestSummaryCard from '../../components/AccountComponents/InterestSumm
 import BottomActionBar from '../../components/BottomActionBar/BottomActionBar'
 import AuthorizationModal, { type ChangeEntry } from '../../components/AccountModals/AuthorizationModal'
 import ConfirmDialog from '../../components/AccountModals/ConfirmDialog'
+import SubmissionAnimationModal from '../../components/AccountModals/SubmissionAnimationModal'
 import HistoryModal from '../../components/AccountModals/HistoryModal'
 import StatusChangeModal from '../../components/AccountModals/StatusChangeModal'
 import type { UserRole } from '../../components/RoleSwitcher/RoleSwitcher'
@@ -265,6 +266,8 @@ const CasaAccountDetailsPage = () => {
   const [showHistoryModal, setShowHistoryModal] = useState(false)
   const [showStatusModal, setShowStatusModal] = useState(false)
   const [showConfirmSubmit, setShowConfirmSubmit] = useState(false)
+  const [showSaveAnimation, setShowSaveAnimation] = useState(false)
+  const [showAuthorizeAnimation, setShowAuthorizeAnimation] = useState(false)
   const [showAddDocumentModal, setShowAddDocumentModal] = useState(false)
   const [editingDocumentId, setEditingDocumentId] = useState<string | null>(null)
   const [documentToDeleteId, setDocumentToDeleteId] = useState<string | null>(null)
@@ -610,7 +613,17 @@ const CasaAccountDetailsPage = () => {
       return
     }
     setPendingChanges(changes)
+    setShowSaveAnimation(true)
+  }
+
+  const handleSaveAnimationComplete = () => {
+    setShowSaveAnimation(false)
     setShowConfirmSubmit(true)
+  }
+
+  const handleSubmitAuthorizationClick = () => {
+    setShowConfirmSubmit(false)
+    setShowAuthorizeAnimation(true)
   }
 
   const handleConfirmSubmit = () => {
@@ -619,6 +632,11 @@ const CasaAccountDetailsPage = () => {
     setWorkflowStatus('pendingAuthorization')
     setShowConfirmSubmit(false)
     showToast('Changes submitted for authorization.')
+  }
+
+  const handleAuthorizeAnimationComplete = () => {
+    setShowAuthorizeAnimation(false)
+    handleConfirmSubmit()
   }
 
   const handleApprove = () => {
@@ -1014,15 +1032,20 @@ const CasaAccountDetailsPage = () => {
 
       {toast && <div className={styles.toast}>{toast}</div>}
 
+      {showSaveAnimation && <SubmissionAnimationModal mode="document" onComplete={handleSaveAnimationComplete} />}
+
       {showConfirmSubmit && (
         <ConfirmDialog
           title="Submit Changes for Authorization?"
           message="Your changes will be submitted for authorization. They will not become effective until an authorized user approves them."
           confirmLabel="Submit for Authorization"
           onCancel={() => setShowConfirmSubmit(false)}
-          onConfirm={handleConfirmSubmit}
-          verifyBeforeConfirm
+          onConfirm={handleSubmitAuthorizationClick}
         />
+      )}
+
+      {showAuthorizeAnimation && (
+        <SubmissionAnimationModal mode="security" onComplete={handleAuthorizeAnimationComplete} />
       )}
 
       {showAuthModal && (

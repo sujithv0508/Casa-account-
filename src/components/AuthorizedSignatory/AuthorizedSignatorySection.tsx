@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import ConfirmDialog from '../AccountModals/ConfirmDialog'
 import { ChevronRightIcon, EditIcon, PlusIcon, SearchIcon, ShieldCheckIcon, TrashIcon, UserIcon } from '../icons/Icons'
 import SectionCard from '../SectionCard/SectionCard'
+import SignatureImagePreview from './SignatureImagePreview'
 import styles from './AuthorizedSignatorySection.module.css'
 
 export type SignatoryMember = {
@@ -71,6 +73,7 @@ const AuthorizedSignatorySection = ({
   const [collapsedIds, setCollapsedIds] = useState<string[]>([])
   const [deleteGroupId, setDeleteGroupId] = useState<string | null>(null)
   const [previewUrls, setPreviewUrls] = useState<Record<string, string>>({})
+  const [enlargedImageUrl, setEnlargedImageUrl] = useState<string | null>(null)
   const fileInputRefs = useRef<Map<string, HTMLInputElement>>(new Map())
 
   const toggleCollapsed = (id: string) => {
@@ -264,13 +267,20 @@ const AuthorizedSignatorySection = ({
                             </div>
                           </div>
 
-                          <span className={styles.memberPreview} aria-hidden="true">
-                            {previewUrls[member.id] ? (
+                          {previewUrls[member.id] ? (
+                            <button
+                              type="button"
+                              className={`${styles.memberPreview} ${styles.memberPreviewClickable}`}
+                              onClick={() => setEnlargedImageUrl(previewUrls[member.id])}
+                              aria-label="View signature image"
+                            >
                               <img src={previewUrls[member.id]} alt="" className={styles.memberPreviewImage} />
-                            ) : (
+                            </button>
+                          ) : (
+                            <span className={styles.memberPreview} aria-hidden="true">
                               <UserIcon className={styles.memberPreviewIcon} />
-                            )}
-                          </span>
+                            </span>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -324,6 +334,16 @@ const AuthorizedSignatorySection = ({
           }}
         />
       )}
+
+      <AnimatePresence>
+        {enlargedImageUrl && (
+          <SignatureImagePreview
+            key="signature-image-preview"
+            imageUrl={enlargedImageUrl}
+            onClose={() => setEnlargedImageUrl(null)}
+          />
+        )}
+      </AnimatePresence>
     </SectionCard>
   )
 }

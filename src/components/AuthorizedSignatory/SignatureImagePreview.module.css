@@ -1,0 +1,58 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(32, 37, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 24px;
+}
+
+.panel {
+  position: relative;
+  display: inline-flex;
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(32, 37, 42, 0.3);
+  padding: 14px;
+  max-width: min(90vw, 520px);
+  max-height: 85vh;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  max-height: calc(85vh - 28px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  box-shadow: 0 4px 10px rgba(32, 37, 42, 0.18);
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.closeButton:hover {
+  background: #FFFFFF;
+  color: var(--ink);
+}
+
+.closeIcon {
+  width: 13px;
+  height: 13px;
+}

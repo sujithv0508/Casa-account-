@@ -23,26 +23,17 @@
   height: 14px;
 }
 
-.groupLabel {
-  margin: 6px 0 0;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 10px 12px;
 }
 
 .tile {
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 14px 16px;
+  padding: 12px 14px;
 }
 
 .tileHighlight {
@@ -50,8 +41,13 @@
   border-color: rgba(22, 163, 74, 0.3);
 }
 
+.tileDanger {
+  background: var(--rose-50);
+  border-color: var(--rose-200);
+}
+
 .label {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: var(--ink-soft);
   font-size: 11px;
   font-weight: 700;

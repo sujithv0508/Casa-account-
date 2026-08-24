@@ -217,6 +217,25 @@
   color: var(--danger);
 }
 
+.authorizedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.authorizedIcon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
 .deleteButton,
 .undoButton {
   width: 32px;

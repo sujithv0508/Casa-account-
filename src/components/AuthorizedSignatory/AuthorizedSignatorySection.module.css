@@ -291,6 +291,16 @@
   overflow: hidden;
 }
 
+.memberPreviewClickable {
+  padding: 0;
+  cursor: pointer;
+  transition: border-color 160ms ease;
+}
+
+.memberPreviewClickable:hover {
+  border-color: rgba(11, 122, 84, 0.4);
+}
+
 .memberPreviewIcon {
   width: 22px;
   height: 22px;
